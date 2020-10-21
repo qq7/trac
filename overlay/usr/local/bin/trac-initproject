@@ -115,6 +115,7 @@ case "$VC" in
         # initialize trac project
         init_trac_project
         trac-admin $PROJ_LIB config set components tracopt.versioncontrol.svn.* enabled
+        trac-admin $PROJ_LIB repository resync "(default)"
         ;;
     *)
         fatal "unsupported VC: $VC"
